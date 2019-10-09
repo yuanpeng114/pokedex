@@ -5,7 +5,6 @@ import { Pokemon, Move, Type } from "../entity/pokedex";
 export async function getMoveList(request: Request, response: Response) {
     try {
         let { pageIndex,  pageSize } = request.query;
-        console.log(request.query);
         const moveRepo = getRepository(Move);
 
         pageIndex = pageIndex ? pageIndex - 1 : 0;

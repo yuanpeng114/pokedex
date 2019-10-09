@@ -3,12 +3,6 @@ import { getRepository, In } from "typeorm";
 import { Pokemon, Type, Move } from "../entity/pokedex";
 import { NextFunction } from "express-serve-static-core";
 
-import { pick } from "lodash";
-
-const object = { "a": 1, "b": "2", "c": 3 };
-
-pick(object, ["a", "c"]);
-
 const moveMainTypeToFirst = (typeList: Type[], mainTypeName: string) => {
     const targetIndex = typeList.findIndex(item => item.typeName === mainTypeName);
     const oldFirst = typeList[0];
